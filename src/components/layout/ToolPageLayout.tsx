@@ -7,9 +7,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Lock } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import UpgradeModal from "@/components/modals/UpgradeModal";
+import { useState } from "react";
 
 interface ToolPageLayoutProps {
   title: string;
@@ -17,6 +19,7 @@ interface ToolPageLayoutProps {
   gradient: string;
   icon: React.ReactNode;
   children: React.ReactNode;
+  isPro?: boolean;
 }
 
 export default function ToolPageLayout({
@@ -25,10 +28,19 @@ export default function ToolPageLayout({
   gradient,
   icon,
   children,
+  isPro = false,
 }: ToolPageLayoutProps) {
+  const [showUpgrade, setShowUpgrade] = useState(isPro);
+
   return (
     <div className="min-h-screen bg-surface-0">
       <Header />
+
+      <UpgradeModal 
+        isOpen={showUpgrade} 
+        onClose={() => setShowUpgrade(false)} 
+        featureName={title}
+      />
 
       <main className="pt-20 pb-16">
         {/* Tool Header */}
@@ -57,12 +69,27 @@ export default function ToolPageLayout({
                 {icon}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-3">
+              <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-3 flex items-center justify-center gap-3">
                 {title}
+                {isPro && (
+                  <span className="text-[10px] uppercase font-black bg-brand-500 text-white px-2 py-0.5 rounded-md tracking-wider">
+                    Pro
+                  </span>
+                )}
               </h1>
-              <p className="text-lg text-text-secondary max-w-xl mx-auto">
+              <p className="text-lg text-text-secondary max-w-xl mx-auto mb-6">
                 {description}
               </p>
+              
+              {isPro && (
+                <button 
+                  onClick={() => setShowUpgrade(true)}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-brand-500/10 text-brand-400 font-bold border border-brand-500/20 hover:bg-brand-500/20 transition-all mb-4"
+                >
+                  <Lock className="h-4 w-4" />
+                  Mở khóa tính năng Pro
+                </button>
+              )}
             </motion.div>
           </div>
         </div>

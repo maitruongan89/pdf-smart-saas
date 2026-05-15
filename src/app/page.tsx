@@ -339,47 +339,50 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                id: "free",
                 name: "Miễn phí",
-                price: "$0",
-                period: "vĩnh viễn",
+                price: "0đ",
+                period: "/mãi mãi",
                 features: [
-                  "Các công cụ PDF cơ bản",
-                  "5 tệp mỗi ngày",
-                  "Tối đa 50MB mỗi tệp",
-                  "Xử lý trực tiếp trên trình duyệt",
+                  "Truy cập các công cụ cơ bản",
+                  "Xử lý file lên đến 20MB",
+                  "Chế độ ngoại tuyến cơ bản",
+                  "Không cần đăng ký",
                 ],
                 cta: "Bắt đầu ngay",
+                href: "/merge-pdf",
                 highlighted: false,
               },
               {
-                name: "Pro",
-                price: "$9",
+                id: "pro_yearly",
+                name: "Cá nhân Pro",
+                price: "199k",
                 period: "/tháng",
                 features: [
-                  "Mọi công cụ PDF",
-                  "Không giới hạn số lượng tệp",
-                  "Tối đa 500MB mỗi tệp",
-                  "Tính năng AI thông minh",
-                  "Hỗ trợ OCR (Quét chữ)",
-                  "Ưu tiên xử lý tốc độ cao",
-                  "Không có watermark quảng cáo",
+                  "Mọi tính năng Miễn phí",
+                  "File lớn lên đến 200MB",
+                  "Chuyển đổi Word/Excel/OCR",
+                  "Không quảng cáo & Watermark",
+                  "Hỗ trợ ưu tiên 24/7",
                 ],
-                cta: "Dùng thử miễn phí",
+                cta: "Nâng cấp Pro",
+                href: "/checkout?plan=pro_yearly",
                 highlighted: true,
               },
               {
+                id: "enterprise",
                 name: "Doanh nghiệp",
                 price: "Liên hệ",
                 period: "",
                 features: [
-                  "Toàn bộ tính năng gói Pro",
-                  "Quyền truy cập API",
-                  "Quản lý nhóm người dùng",
-                  "Tùy chỉnh thương hiệu riêng",
-                  "Cam kết SLA ổn định",
+                  "Mọi tính năng Pro",
+                  "Quản lý tài khoản nhóm",
+                  "API tích hợp riêng",
+                  "Bảo mật cấp doanh nghiệp",
                   "Hỗ trợ kỹ thuật ưu tiên",
                 ],
-                cta: "Liên hệ bộ phận bán hàng",
+                cta: "Liên hệ ngay",
+                href: "https://zalo.me/0905012131",
                 highlighted: false,
               },
             ].map((plan, i) => (
@@ -397,7 +400,7 @@ export default function HomePage() {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold gradient-brand text-white">
-                    Most Popular
+                    Phổ biến nhất
                   </div>
                 )}
 
@@ -423,15 +426,16 @@ export default function HomePage() {
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all ${
+                <Link
+                  href={plan.href}
+                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center ${
                     plan.highlighted
                       ? "gradient-brand text-white shadow-lg shadow-brand-500/25 hover:opacity-90"
                       : "border border-glass-border text-text-primary hover:bg-glass-hover"
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>
