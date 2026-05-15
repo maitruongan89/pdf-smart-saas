@@ -75,9 +75,9 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]"
             >
-              <span className="text-text-primary">Mọi công cụ PDF</span>
+              <span className="text-text-primary">Công cụ PDF</span>
               <br />
-              <span className="gradient-text">bạn thực sự cần</span>
+              <span className="gradient-text">Thông minh nhất cho bạn</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -87,7 +87,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10"
             >
-              Ghép, tách, nén, chuyển đổi, chỉnh sửa và bảo mật PDF với tốc độ cực nhanh.
+              Ghép, tách, nén, chuyển đổi, quét và bảo mật PDF với tốc độ cực nhanh.
               Không cần tải lên — tệp của bạn luôn nằm an toàn trên thiết bị của bạn.
             </motion.p>
 
