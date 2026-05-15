@@ -399,6 +399,21 @@ function ToolIcon({ name, size = 16 }: { name: string; size?: number }) {
         <path d="M7 11V7a5 5 0 0 1 9.9-1" />
       </svg>
     ),
+    camera: (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+        <circle cx="12" cy="13" r="3" />
+      </svg>
+    ),
   };
 
   return icons[name] || icons["file-text"];
