@@ -20,7 +20,8 @@ export type ToolType =
   | "pdf-to-ppt"
   | "word-to-pdf"
   | "excel-to-pdf"
-  | "ppt-to-pdf";
+  | "ppt-to-pdf"
+  | "scan-pdf";
 
 /** File with metadata for processing */
 export interface PdfFile {
