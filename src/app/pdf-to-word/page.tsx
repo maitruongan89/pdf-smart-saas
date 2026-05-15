@@ -4,13 +4,14 @@ import { useState } from "react";
 import { FileText, Download, Loader2, FileCode, CheckCircle2 } from "lucide-react";
 import ToolPageLayout from "@/components/layout/ToolPageLayout";
 import FileUpload from "@/components/pdf/FileUpload";
+import type { PdfFile } from "@/types/pdf";
 
 export default function PdfToWordPage() {
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<PdfFile[]>([]);
   const [status, setStatus] = useState<"idle" | "uploading" | "converting" | "completed">("idle");
 
   const handleConvert = () => {
-    if (!file) return;
+    if (files.length === 0) return;
     
     setStatus("uploading");
     
@@ -41,11 +42,12 @@ export default function PdfToWordPage() {
           <div className="space-y-6">
             <FileUpload
               accept="pdf"
-              onFileSelect={(files) => setFile(files[0])}
+              files={files}
+              onFilesChange={setFiles}
               label="Chọn file PDF để chuyển sang Word"
             />
             
-            {file && (
+            {files.length > 0 && (
               <div className="flex justify-center">
                 <button
                   onClick={handleConvert}
