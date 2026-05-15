@@ -96,6 +96,7 @@ export const tools: ToolInfo[] = [
     name: "Quét sang PDF",
     description: "Sử dụng camera để quét tài liệu và ghép thành file PDF.",
     icon: "camera",
+    color: "#10b981",
     gradient: "from-emerald-500 to-teal-500",
     href: "/scan-pdf",
     category: "convert",
