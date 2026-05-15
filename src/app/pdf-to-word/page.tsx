@@ -40,7 +40,7 @@ export default function PdfToWordPage() {
         {status === "idle" ? (
           <div className="space-y-6">
             <FileUpload
-              accept={{ "application/pdf": [".pdf"] }}
+              accept="pdf"
               onFileSelect={(files) => setFile(files[0])}
               label="Chọn file PDF để chuyển sang Word"
             />
