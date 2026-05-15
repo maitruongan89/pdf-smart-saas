@@ -72,7 +72,7 @@ export default function Header() {
                       className="absolute left-0 top-full mt-1 w-[520px] glass-strong rounded-2xl p-4 shadow-2xl"
                     >
                       <div className="grid grid-cols-2 gap-1.5">
-                        {tools.slice(0, 10).map((tool) => (
+                        {tools.map((tool) => (
                           <Link
                             key={tool.id}
                             href={tool.href}
