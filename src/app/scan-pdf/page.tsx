@@ -47,7 +47,7 @@ export default function ScanPdfPage() {
   const startCamera = async () => {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({ 
-        video: { facingMode: "environment", width: {理想: 1920}, height: {理想: 1080} } 
+        video: { facingMode: "environment", width: { ideal: 1920 }, height: { ideal: 1080 } } 
       });
       setStream(mediaStream);
       if (videoRef.current) {
