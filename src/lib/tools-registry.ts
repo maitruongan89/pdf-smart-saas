@@ -8,6 +8,16 @@ import { ToolInfo } from "@/types/pdf";
 export const tools: ToolInfo[] = [
   // Transform tools
   {
+    id: "scan-pdf",
+    name: "Quét sang PDF",
+    description: "Sử dụng camera để quét tài liệu và ghép thành file PDF.",
+    icon: "camera",
+    color: "#10b981",
+    gradient: "from-emerald-500 to-teal-500",
+    href: "/scan-pdf",
+    category: "transform",
+  },
+  {
     id: "merge",
     name: "Ghép PDF",
     description: "Gộp nhiều file PDF thành một tài liệu duy nhất",
@@ -91,17 +101,6 @@ export const tools: ToolInfo[] = [
     category: "convert",
     isPro: true,
   },
-  {
-    id: "scan-pdf",
-    name: "Quét sang PDF",
-    description: "Sử dụng camera để quét tài liệu và ghép thành file PDF.",
-    icon: "camera",
-    color: "#10b981",
-    gradient: "from-emerald-500 to-teal-500",
-    href: "/scan-pdf",
-    category: "convert",
-  },
-
   // Edit tools
   {
     id: "edit",
